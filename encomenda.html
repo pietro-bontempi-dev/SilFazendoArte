@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sil Fazendo Arte</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudFlare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	</head>
+	<body>
+
+		<header>
+			<div class="menu">
+				<div id="nav" class="overLay">
+					<a href="#" class="closeBtn" onclick="closeNav()">&times;</a>
+					<div class="overLay-content">
+						<a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+						<a href="encomenda.html"><i class="fa-solid fa-heart" aria-hidden="true"></i> Sobre</a>
+						<a href="#"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> Encomendas</a>
+						<a href="#"><i class="fa-solid fa-phone" aria-hidden="true"></i> Contato</a>
+					</div>
+				</div>
+				<button class="nav-button" onclick="openNav()">
+					<i class="fa-solid fa-bars fa-2x"></i>
+				</button>
+			</div>
+			<div class="container">
+				<img src="img/logo.png" class="logo">
+			</div>
+		</header>
+
+        <section class="container">
+			<h2 id="titulo-form">Faça um pedido</h2>
+			<ul id="mensagens-erro"></ul>
+            <!-- Inicio do formulario -->
+            <form method="get" action=".">
+                <div class="grupo">
+					<label for="nome">Nome:</label>
+					<input type="text" id="nome" name="nome" placeholder="Digite o seu nome" class="campo">
+				</div>
+                <div class="grupo">
+					<label for="nome">Email:</label>
+					<input type="email" id="email" name="email" placeholder="Digite o seu email" class="campo">
+				</div>
+                <div class="grupo">
+					<label for="produto">Produto:</label>
+					<select id="produto" name="produto" class="campo campo-medio">
+						<option value="">Selecione</option>
+						<option>Jogo Americano (4 peças) - Rosa</option>
+						<option>Jogo Americano (4 peças) - Amarelo</option>
+						<option>Jogo Americano (4 peças) - Verde</option>
+						<option>Tapetes Cozinha (3 peças) - Azul</option>
+						<option>Tapetes Cozinha (3 peças) - Rosa</option>
+						<option>Tapetes Cozinha (3 peças) - Amarelo</option>
+						<option>Tapetes Cozinha (3 peças) - Vermelho</option>
+						<option>Pulseira Cristal - Colorida</option>
+						<option>Pulseira Cristal - Vermelha</option>
+						<option>Pulseira Cristal - Rosa</option>
+						<option>Pulseira Cristal - Lilás</option>
+						<option>Pulseira Cristal - Preta</option>
+					</select>
+				</div>
+                <div class="grupo">
+					<label for="qtde">Qtde:</label>
+					<input type="number" id="qtde" name="qtde" placeholder="Digite a quantidade desejada" class="campo campo-medio">
+				</div>
+                <div class="grupo">
+                    <label>Cep:</label>
+                    <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                        onblur="pesquisacep(this.value);" class="campo" />
+                </div>
+                <div class="grupo">
+                    <label>Rua:</label>
+                    <input name="rua" type="text" id="rua" size="60" class="campo"/>
+                </div>
+                <div class="grupo">
+                    <label>Bairro:</label>
+                    <input name="bairro" type="text" id="bairro" size="40" class="campo"/>
+                </div>
+                <div class="grupo">
+                    <label>Cidade:</label>
+                    <input name="cidade" type="text" id="cidade" size="40" class="campo"/>
+                </div>
+                <div class="grupo">
+                    <label>Estado:</label>
+                    <input name="uf" type="text" id="uf" size="40" class="campo campo-medio"/>
+                </div>
+                <div class="grupo">
+                    <label for="num">Número:</label>
+                    <input type="text" name="numero" id="num" placeholder="Digite seu Número" class="campo">
+                </div>
+
+				<button id="adicionar-encomenda" class="botao bto-principal">Adicionar</button>
+
+            </form>
+		</section>
+
+        
+		<script src="js/calcula-total.js"></script>
+		<script src="js/form.js"></script>
+		<script src="js/remover-encomenda.js"></script>
+		<script src="js/filtra.js"></script>
+		<script src="js/buscar-encomenda.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="js/busca-cep.js"></script>
+            
+    </body>
+</html>

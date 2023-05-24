@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sil Fazendo Arte</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudFlare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+	</head>
+	<body>
+
+		<header>
+			<div class="menu">
+				<div id="nav" class="overLay">
+					<a href="#" class="closeBtn" onclick="closeNav()">&times;</a>
+					<div class="overLay-content">
+						<a href="inedx.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+						<a href="#"><i class="fa-solid fa-heart" aria-hidden="true"></i> Sobre</a>
+						<a href="encomenda.html"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> Encomendas</a>
+						<a href="#"><i class="fa-solid fa-phone" aria-hidden="true"></i> Contato</a>
+						<a href="calculadora.html"><i class="fa-solid fa-calculator" aria-hidden="true"></i> Calculadora de Custos</a>
+					</div>
+				</div>
+				<button class="nav-button" onclick="openNav()">
+					<i class="fa-solid fa-bars fa-2x"></i>
+				</button>
+			</div>
+			<div class="container">
+				<img src="img/logo.png" class="logo">
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2 class="titulo">Encomendas</h2>
+				<label for="filtrar-tabela">Filtrar:</label>
+				<input type="text" id="filtrar-tabela" class="filtrar-tabela" placeholder="Digite o cliente para pesquisar">
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Produto</th>
+							<th>Quantidade</th>
+							<th>Valor Unitário</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-clientes">
+						<tr class="cliente">
+							<td class="nome">Margarete</td>
+							<td>Jogo Americano (4 peças) - Rosa</td>
+							<td class="qtde">2</td>
+							<td class="unitario">unitario</td>
+							<td class="total">0</td>
+						</tr>
+						<tr class="cliente"> 
+							<td class="nome">Carolina</td>
+							<td>Tapetes Cozinha (3 peças) - Azul</td>
+							<td class="qtde">B</td>
+							<td class="unitario">50</td>
+							<td class="total">0</td>
+						</tr>
+						<tr class="cliente">
+							<td class="nome">Daniele</td>
+							<td>Pulseira Cristal Colorida</td>
+							<td class="qtde">3</td>
+							<td class="unitario">25</td>
+							<td class="total">0</td>
+						</tr>
+						<tr class="cliente">
+							<td class="nome">Daniele</td>
+							<td>Pulseira Cristal Vermelha</td>
+							<td class="qtde">4</td>
+							<td class="unitario">30</td>
+							<td class="total">0</td>
+						</tr>
+					</tbody>
+				</table>
+				<button id="buscar-encomendas" class="botao bto-principal">Buscar Encomenda</button>
+			</section>
+		</main>
+
+		<!--Formulário de inclusão de encomendas -->
+		<section class="container">
+			<h2 id="titulo-form">Adicionar nova encomenda</h2>
+			<ul id="mensagens-erro"></ul>
+			<form id="form-adiciona">
+				<div class="grupo">
+					<label for="nome">Nome:</label>
+					<input type="text" id="nome" name="nome" placeholder="Digite o nome do(a) cliente" class="campo">
+				</div>
+				<div class="grupo">
+					<label for="qtde">Qtde:</label>
+					<input type="number" id="qtde" name="qtde" placeholder="Digite a quantidade encomendada" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="produto">Produto:</label>
+					<select id="produto" name="produto" class="campo campo-medio">
+						<option value="">Selecione</option>
+						<option>Jogo Americano (4 peças) - Rosa</option>
+						<option>Jogo Americano (4 peças) - Amarelo</option>
+						<option>Jogo Americano (4 peças) - Verde</option>
+						<option>Tapetes Cozinha (3 peças) - Azul</option>
+						<option>Tapetes Cozinha (3 peças) - Rosa</option>
+						<option>Tapetes Cozinha (3 peças) - Amarelo</option>
+						<option>Tapetes Cozinha (3 peças) - Vermelho</option>
+						<option>Pulseira Cristal - Colorida</option>
+						<option>Pulseira Cristal - Vermelha</option>
+						<option>Pulseira Cristal - Rosa</option>
+						<option>Pulseira Cristal - Lilás</option>
+						<option>Pulseira Cristal - Preta</option>
+					</select>
+				</div>
+				<div class="grupo">
+					<label for="unitario">R$ Unitário:</label>
+					<input type="number" id="unitario" name="unitario" placeholder="Digite o valor unitário do produto" class="campo campo-medio">
+				</div>
+
+				<button id="adicionar-encomenda" class="botao bto-principal">Adicionar</button>
+			</form>
+		</section>
+
+		<section class="container">
+
+			
+			<div>
+				<h2 id="titulo-form">Produtos Mais Vendidos</h2>
+			</div>
+
+			<div class="c-carousel__slides js-carousel--simple">
+				<img src="img/tapete.jpg" class="c-carousel__slide">
+				<img src="img/pulseira.jpg" class="c-carousel__slide">
+				<img src="img/toalha.jpg" class="c-carousel__slide">
+				<img src="img/tapete2.jpg" class="c-carousel__slide">
+				<img src="img/pulseira2.jpg" class="c-carousel__slide">
+				<img src="img/toalha2.jpg" class="c-carousel__slide">
+			</div>
+				<div class="js-carousel--simple-dots"></div>
+		</section>
+		<br><br><br>
+
+		<script src="js/calcula-total.js"></script>
+		<script src="js/form.js"></script>
+		<script src="js/remover-encomenda.js"></script>
+		<script src="js/filtra.js"></script>
+		<script src="js/buscar-encomenda.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="js/carousel.js"></script>
+	</body>
+</html>
